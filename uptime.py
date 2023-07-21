@@ -33,9 +33,11 @@ def print_banner():
     print(banner)
 
 def main():
-    print_banner()
-    # Get user input for the URL to check
-    url = input("> Enter the URL to check uptime: ")
+    url = input("> Enter the URL to check uptime: ").strip()
+    if not url:
+        print("Please provide a valid URL.")
+        return
+
     check_uptime(url)
 
 main()
